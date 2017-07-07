@@ -6,4 +6,4 @@ Run the following command from the terminal window (password-alias retail_dba is
 hadoop credential create retail_dba -provider jceks://hdfs/user/cloudera/keystore/retail_dba.jceks
 
 List the aliases in the file retail_dba.jceks
-hadoop credential list  -provider jceks://hdfs/user/cloudera/retail_dba.jceks
+hadoop credential list  -provider jceks://hdfs/user/cloudera/keystore/retail_dba.jceks
