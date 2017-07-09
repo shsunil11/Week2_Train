@@ -1,0 +1,38 @@
+**************************************************************************************
+Map Reduce
+**************************************************************************************
+Step 1 :
+==============================================================================
+Create directory structure under /user/cloudera/train/mapr on the local node
+We will work in the /user/cloudera/train/mapr directory for the Map Reduce exercise
+Create input directory on HDFS /user/cloudera/mapr/input
+Place a text file with some words at the input directory /user/cloudera/mapr/input
+
+Step 2 :
+==============================================================================
+cd /user/cloudera/train/mapr
+
+Create the following 3 java files
+WordCount.java   (Driver Class)
+WordCountMapper.java
+WordCountReducer.java
+
+compile the java files as follows
+
+javac -classpath `hadoop classpath` *.java
+
+create wordcount.jar as follows
+
+jar cvf wordcount.jar *.class
+
+
+Step 3:
+==============================================================================
+Run the mapreduce job as follows
+
+hadoop jar wordcount.jar WordCount mapr/input mapr/output
+
+(hadoop jar takes  parameters as   <jar_file>  <driver_class>  
+<HDFS input directory> <HDFS output directory> are arguments to the Driver Class)
+
+Check the output in mapr/output directory
