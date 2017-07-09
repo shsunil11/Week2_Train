@@ -5,5 +5,7 @@ create the HDFS directory /user/cloudera/keystore
 Run the following command from the terminal window (password-alias retail_dba is stored in the .jecks file retail_dba.jceks)
 hadoop credential create retail_dba -provider jceks://hdfs/user/cloudera/keystore/retail_dba.jceks
 
+Enter the password (cloudera)  twice.
+
 List the aliases in the file retail_dba.jceks
 hadoop credential list  -provider jceks://hdfs/user/cloudera/keystore/retail_dba.jceks
