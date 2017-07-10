@@ -4,7 +4,17 @@ Map Reduce
 Step 1 :
 ==============================================================================
 Create directory structure under /user/cloudera/train/mapr on the local node
-We will work in the /user/cloudera/train/mapr directory for the Map Reduce exercise
+
+We will use the following directory structure in the local node
+/home/cloudera/train/mapr
+                    /sqoop
+                    /hive
+                    /oozie
+                    /spark
+                    /hbase
+
+We will work in the /home/cloudera/train/mapr directory for the Map Reduce exercise
+
 Create input directory on HDFS /user/cloudera/mapr/input
 Place a text file with some words at the input directory /user/cloudera/mapr/input
 
