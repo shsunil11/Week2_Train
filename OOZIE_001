@@ -1,0 +1,11 @@
+We will work in the directory /home/cloudera/train/oozie  on the local node for oozie exercises.
+
+oozie workflows need to be stored on HDFS. So create a HDFS directory called /user/cloudera/oozie to store the oozie workflows
+
+We will creating the following oozie workflows.
+
+1. Oozie workflow to create a directory on HDFS
+
+2. Oozie worklfow using hive2 action to insert data into a hive table.
+
+3. Oozie workflow using sqoop action to sqoop data into HDFS
