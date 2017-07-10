@@ -26,7 +26,9 @@ File workflow.xml should have the following content
 </workflow-app>
 
 
-Once the files are created, submit the oozie job as follows
+Once the files are created, place the workflow.xml in the HDFS directory /user/cloudera/workflows
+
+Submit the oozie job as follows
 
 oozie job -config ws_fs.properties -run
 
@@ -36,6 +38,6 @@ check the status of the oozie job as follows
 
 oozie job -info <oozie_ID>
 
-Also, check the oozie workflow from Hue.
+Also, check the oozie workflow status from Hue.
 
 
