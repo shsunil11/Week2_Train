@@ -1,0 +1,60 @@
+Last login: Sun Jul  9 18:06:35 on console
+/Users/sunilshevale>cd BDTrain/
+/Users/sunilshevale/BDTrain>ls -l
+total 421880
+drwxr-xr-x  2 sunilshevale  staff         68 Jul  6 11:45 Downloads
+-rw-r--r--  1 sunilshevale  staff       4918 Jul  8 14:00 EX.txt
+-rw-r--r--  1 sunilshevale  staff       1403 Feb  4 16:05 VM.txt
+drwxr-xr-x  5 sunilshevale  staff        170 Jul  8 14:53 train
+-rw-r--r--  1 sunilshevale  staff  215869440 Jul  7 20:35 train_77.tar
+-rw-r--r--  1 sunilshevale  staff     114176 Jul  8 21:54 train_78.tar
+-rw-r--r--  1 sunilshevale  staff        132 Jul  6 11:35 vm_bashrc.txt
+/Users/sunilshevale/BDTrain>vi EX.txt 
+
+
+
+
+
+
+
+
+
+
+
+/Users/sunilshevale/BDTrain>cd train
+/Users/sunilshevale/BDTrain/train>cd mapr
+/Users/sunilshevale/BDTrain/train/mapr>ls -l
+total 88
+-rw-r--r--  1 sunilshevale  staff   299 Jul  7 16:48 RM.txt
+-rw-r--r--  1 sunilshevale  staff  1876 Jul  7 16:17 WordCount.class
+-rw-r--r--  1 sunilshevale  staff  1490 Jul  7 16:17 WordCount.java
+-rw-r--r--  1 sunilshevale  staff  1806 Jul  7 16:17 WordCountMapper.class
+-rw-r--r--  1 sunilshevale  staff   650 Jul  7 16:17 WordCountMapper.java
+-rw-r--r--  1 sunilshevale  staff  1702 Jul  7 16:17 WordCountReducer.class
+-rw-r--r--  1 sunilshevale  staff   626 Jul  7 16:15 WordCountReducer.java
+-rw-r--r--  1 sunilshevale  staff  6796 Jul  7 16:21 npr.txt
+-rw-r--r--  1 sunilshevale  staff  3103 Jul  7 16:17 wordcount.jar
+-rw-r--r--  1 sunilshevale  staff   182 Jul  7 16:12 words.txt
+/Users/sunilshevale/BDTrain/train/mapr>vi npr.txt
+
+Two young Nigerians helped give him hope again.
+
+Awofeso Adebola, 23, and Ifeoluwa Ayomide, 22, had well-paying jobs in the Nigerian parliament. Then Adebola visited the displaced person camp in Durumi, outside the capital city of Abuja, to donate relief materials. That's where Zachariah lives. The camp is home to some 2,000 people who've fled from the attacks of Boko Haram, which is fighting to carve out an Islamic state in the north of the country.
+
+"They were shooting people and burning down homes," the bristly-haired teenager says, tears welling up in his eyes. "My family trekked for four days with little food and water." That was in June 2014.
+
+In the camp, life is better, but there aren't a lot of services available. It's hard to get drinking water. And it's been hard to get an education. The Nigerian government runs the camp but doesn't give a lot of financial support, so donations from aid groups, individuals and churches help fill the gaps.
+
+The government originally established a school but did not provide teachers, so most of the children stayed away.
+
+That's what Adebola noticed when he first visited, and what made him return. Soon, Ayomide joined him.
+
+"I was amazed at how much time and effort he was putting in the camp, and I was inspired to support him," Ayomide says.
+
+Even though they had no training, the two young men decided to start a school.
+
+At first, Adebola and Ayomide juggled their government jobs with teaching, but halfway into the project, they quit completely in order to devote all their time to the school. Right now, they're living off their savings, support from family and friends and individual donations.
+
+They feel that for the students, their personal sacrifices are worth it.
+
+"We usually hold regular discussions where we ask them [the students] to tell us their future ambitions. Then we tell them what they must do to achieve, how hard they must study and work," Ayomide said.
