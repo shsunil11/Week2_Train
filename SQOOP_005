@@ -14,14 +14,21 @@ retail_dba
 -table
 products
 
+-where
+product_id < 500
+
 -target-dir
 mysql_data/products
 
 -m
 2
 
--columns
-product_id,product_name
+-fields-terminated-by
+"\001"
 
--where
-product_id < 500
+-null-string
+"\\N"
+
+-null-non-string
+"\\N"
+
