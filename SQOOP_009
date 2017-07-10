@@ -8,7 +8,9 @@ import-all-tables
 
 --password-alias=retail_dba
 
---hive-import --create-hive-table 
+--hive-import 
+
+--create-hive-table 
 
 --hive-database=mysql_db 
 
