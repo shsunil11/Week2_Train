@@ -1,0 +1,41 @@
+In /home/cloudera/train/oozie directory on the local node, create the following files
+
+File ws_fs.properties should have the following content
+
+nameNode=hdfs://quickstart.cloudera:8020
+jobTracker=quickstart.cloudera:8032
+oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_fs
+
+
+File workflow.xml should have the following content
+
+
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="wf_fs">
+    <start to="prepare-node"/>
+    <action name="prepare-node">
+        <fs>
+        <mkdir path='${nameNode}/user/cloudera/oozie_test/'/>
+        </fs>    
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>HDFS command failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>
+
+
+Once the files are created, submit the oozie job as follows
+
+oozie job -config ws_fs.properties -run
+
+The above command will return the oozie workflow ID
+
+check the status of the oozie job as follows
+
+oozie job -info <oozie_ID>
+
+Also, check the oozie workflow from Hue.
+
+
