@@ -1,0 +1,73 @@
+In /home/cloudera/train/oozie directory on the local node, create the following files
+
+File wf_sqoop.properties should have the following content
+
+nameNode=hdfs://quickstart.cloudera:8020
+jobTracker=quickstart.cloudera:8032
+oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_sqoop
+oozie.use.system.libpath=true
+oozie.libpath=/user/oozie/share/lib,/user/oozie/share/lib/sqoop_jars
+table=products
+fields_terminated_by=\\001
+null_string=\\\\N
+null_non_string=\\\\N
+target_dir=/user/cloudera/hivedb/extdb/${table}_raw
+
+
+File wf_sqoop.xml should have the following content
+
+
+<workflow-app xmlns="uri:oozie:workflow:0.5" name="wf_sq">
+    <start to="sqoop-node"/>
+    <action name="sqoop-node">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.3">
+           <job-tracker>${jobTracker}</job-tracker>
+           <name-node>${nameNode}</name-node>
+           <prepare>
+              <delete path="${target_dir}"/>
+           </prepare>
+           <arg>import</arg>
+           <arg>-Dhadoop.security.credential.provider.path=jceks://hdfs/user/cloudera/keystore/retail_dba.jceks</arg>
+           <arg>--connect</arg>
+           <arg>jdbc:mysql://localhost:3306/retail_db</arg>
+           <arg>--username</arg>
+           <arg>retail_dba</arg>
+           <arg>--password-alias</arg>
+           <arg>retail_dba</arg>
+           <arg>--table</arg>
+           <arg>${table}</arg>
+           <arg>--m</arg>
+           <arg>2</arg>
+           <arg>--target-dir</arg>
+           <arg>${target_dir}</arg>
+           <arg>--fields-terminated-by</arg>
+           <arg>${fields_terminated_by}</arg>
+           <arg>--null-string</arg>
+           <arg>${null_string}</arg>
+           <arg>--null-non-string</arg>
+           <arg>${null_non_string}</arg>
+        </sqoop>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>Sqoop script failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>
+
+Once the files are created, place the wf_sqoop.xml in the HDFS directory /user/cloudera/workflows
+
+Submit the oozie job as follows
+
+oozie job -config wf_sqoop.properties -run
+
+The above command will return the oozie workflow ID
+
+check the status of the oozie job as follows
+
+oozie job -info <oozie_ID>
+
+Also, check the oozie workflow status from Hue.
+
+
