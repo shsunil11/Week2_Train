@@ -1,0 +1,4 @@
+
+Run the following sqoop eval command from the terminal
+
+sqoop eval -connect jdbc:mysql://localhost:3306/retail_db -username retail_dba -password cloudera -query "select count(*) from products"
