@@ -1,0 +1,27 @@
+import
+
+-Dhadoop.security.credential.provider.path=jceks://hdfs/user/cloudera/keystore//retail_dba.jceks
+
+-connect
+jdbc:mysql://localhost:3306/retail_db 
+
+-username
+retail_dba
+
+-password-alias
+retail_dba
+
+-table
+products
+
+-target-dir
+mysql_data/products
+
+-m
+2
+
+-columns
+product_id,product_name
+
+-where
+product_id < 500
