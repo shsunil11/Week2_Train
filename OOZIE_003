@@ -1,0 +1,60 @@
+In /home/cloudera/train/oozie directory on the local node, create the following 3 files
+
+File wf_hive2.properties should have the following content
+
+nameNode=hdfs://quickstart.cloudera:8020
+jobTracker=quickstart.cloudera:8032
+oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_hive2.xml
+oozie.use.system.libpath=true
+hive_script=ins_products.hql
+hivedb=extdb
+source_table=products
+target_table=products_prq
+
+
+
+File wf_hive2.xml should have the following content
+
+<workflow-app xmlns="uri:oozie:workflow:0.5" name="wf_hive2">
+    <start to="hive-node"/>
+    <action name="hive-node">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://localhost:10000</jdbc-url>
+            <script>${hive_script}</script>
+            <param>target_db=${target_db}</param>
+        </hive2>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>Hive script failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>
+
+File ins_products.hql should be as follows
+
+insert overwrite table ${hivedb}.${target_table}
+select * from ${hivedb}.${source_table};
+
+
+
+Once the files are created, 
+place the wf_hive2.xml in the HDFS directory /user/cloudera/workflows
+Also place the ins_products.hql in the HDFS directory /user/cloudera/workflows
+
+Submit the oozie job as follows
+
+oozie job -config wf_sqoop.properties -run
+
+The above command will return the oozie workflow ID
+
+check the status of the oozie job as follows
+
+oozie job -info <oozie_ID>
+
+Also, check the oozie workflow status from Hue.
+
+
