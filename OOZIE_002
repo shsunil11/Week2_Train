@@ -1,10 +1,10 @@
 In /home/cloudera/train/oozie directory on the local node, create the following files
 
-File ws_fs.properties should have the following content
+File wf_fs.properties should have the following content
 
 nameNode=hdfs://quickstart.cloudera:8020
 jobTracker=quickstart.cloudera:8032
-oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_fs
+oozie.wf.application.path=${nameNode}/user/cloudera/workflows/
 
 
 File workflow.xml should have the following content
