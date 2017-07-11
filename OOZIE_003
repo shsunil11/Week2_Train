@@ -49,7 +49,7 @@ Also place the ins_products.hql in the HDFS directory /user/cloudera/workflows
 
 Submit the oozie job as follows
 
-oozie job -config wf_sqoop.properties -run
+oozie job -config wf_hive2.properties -run
 
 The above command will return the oozie workflow ID
 
