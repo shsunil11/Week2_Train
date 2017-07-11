@@ -8,7 +8,7 @@ oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_hive2.xml
 oozie.use.system.libpath=true
 hive_script=ins_products.hql
 hivedb=extdb
-source_table=products
+source_table=products_sqoop
 target_table=products_prq
 
 
@@ -23,7 +23,9 @@ File wf_hive2.xml should have the following content
             <name-node>${nameNode}</name-node>
             <jdbc-url>jdbc:hive2://localhost:10000</jdbc-url>
             <script>${hive_script}</script>
-            <param>target_db=${target_db}</param>
+            <param>hivedb=${hivedb}</param>
+            <param>source_table=${source_table}</param>
+            <param>target_table=${target_table}</param>
         </hive2>
         <ok to="end"/>
         <error to="fail"/>
