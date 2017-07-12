@@ -4,7 +4,7 @@ File wf_sqoop.properties should have the following content
 
 nameNode=hdfs://quickstart.cloudera:8020
 jobTracker=quickstart.cloudera:8032
-oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_sqoop
+oozie.wf.application.path=${nameNode}/user/cloudera/workflows/wf_sqoop.xml
 oozie.use.system.libpath=true
 oozie.libpath=/user/oozie/share/lib,/user/oozie/share/lib/sqoop_jars
 table=products
